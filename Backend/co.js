@@ -33,11 +33,11 @@ const loginUser = async (req, res) => {
           // User authenticated successfully
           let redirectURL;
           if (users === 'students') {
-            redirectURL = 'http://localhost:3000/';
-          } else if (users === 'teachers') {
             redirectURL = 'http://localhost:3001/';
-          } else if (users === 'admin') {
+          } else if (users === 'teachers') {
             redirectURL = 'http://localhost:3002/';
+          } else if (users === 'admin') {
+            redirectURL = 'http://localhost:3003/';
           } else {
             res.status(400).send('Invalid user role');
             return;
@@ -63,5 +63,6 @@ const loginUser = async (req, res) => {
 
 
 module.exports = router;
+
 
 
